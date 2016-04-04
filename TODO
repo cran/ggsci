@@ -1,0 +1,6 @@
+# TODO
+
+  * Add GSEA - GenePattern HeatMapViewer Module (continuous) color palette
+  * Add heatmap and correlation matrix demos for continuous palettes
+  * Add a function for displaying all color palettes
+  * Add color palette for Duke

@@ -1,0 +1,22 @@
+Package: ggsci
+Type: Package
+Title: Scientific Journal and Sci-Fi Themed Color Palettes for
+        'ggplot2'
+Version: 1.1
+Date: 2016-04-03
+Author: Nan Xiao <nanx@uchicago.edu>, Miaozhu Li <miaozhu.li@duke.edu>
+Maintainer: Nan Xiao <nanx@uchicago.edu>
+Description: A collection of 'ggplot2' color palettes inspired by scientific journals and science fiction TV shows.
+License: GPL
+LazyData: TRUE
+VignetteBuilder: knitr
+URL: http://ggsci.net
+BugReports: https://github.com/road2stat/ggsci/issues
+Depends: R (>= 3.0.2)
+Imports: grDevices, scales, ggplot2 (>= 2.0.0)
+Suggests: knitr, rmarkdown, gridExtra
+RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-04-03 19:30:31 UTC; jimmy
+Repository: CRAN
+Date/Publication: 2016-04-04 08:37:09
