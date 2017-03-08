@@ -1,6 +1,6 @@
 ---
 title: "Scientific Journal and Sci-Fi Themed Color Palettes for ggplot2"
-author: "Nan Xiao <<http://nanx.me>> <br>
+author: "Nan Xiao <<https://nanx.me>> <br>
          Miaozhu Li <<http://miaozhu.li>>"
 date: "`r Sys.Date()`"
 output:
@@ -25,8 +25,8 @@ vignette: >
 
 `ggsci` offers a collection of high-quality color palettes inspired by
 colors used in scientific journals, data visualization libraries,
-and science fiction TV shows. The color palettes in `ggsci` are
-available as `ggplot2` scales. For all the color palettes,
+science fiction movies, and TV shows. The color palettes in `ggsci`
+are available as `ggplot2` scales. For all the color palettes,
 the corresponding scales are named as:
 
   * `scale_color_palname()`
@@ -45,6 +45,9 @@ summarized in the table below.
 | AAAS           | `scale_color_aaas()`         | `"default"`       | `pal_aaas()`         |
 |                | `scale_fill_aaas()`          |                   |                      |
 +----------------+------------------------------+-------------------+----------------------+
+| NEJM           | `scale_color_nejm()`         | `"default"`       | `pal_nejm()`         |
+|                | `scale_fill_nejm()`          |                   |                      |
++----------------+------------------------------+-------------------+----------------------+
 | Lancet         | `scale_color_lancet()`       | `"lanonc"`        | `pal_lancet()`       |
 |                | `scale_fill_lancet()`        |                   |                      |
 +----------------+------------------------------+-------------------+----------------------+
@@ -59,18 +62,27 @@ summarized in the table below.
 |                |                              | `"category20b"`   |                      |
 |                |                              | `"category20c"`   |                      |
 +----------------+------------------------------+-------------------+----------------------+
+| LocusZoom      | `scale_color_locuszoom()`    | `"default"`       | `pal_locuszoom()`    |
+|                | `scale_fill_locuszoom()`     |                   |                      |
++----------------+------------------------------+-------------------+----------------------+
+| IGV            | `scale_color_igv()`          | `"default"`<br>   | `pal_igv()`          |
+|                | `scale_fill_igv()`           | `"alternating"`   |                      |
++----------------+------------------------------+-------------------+----------------------+
 | UChicago       | `scale_color_uchicago()`     | `"default"`<br>   | `pal_uchicago()`     |
 |                | `scale_fill_uchicago()`      | `"light"`<br>     |                      |
 |                |                              | `"dark"`          |                      |
 +----------------+------------------------------+-------------------+----------------------+
-| The Simpsons   | `scale_color_simpsons()`     | `"springfield"`   | `pal_simpsons()`     |
-|                | `scale_fill_simpsons()`      |                   |                      |
+| Star Trek      | `scale_color_startrek()`     | `"uniform"`       | `pal_startrek()`     |
+|                | `scale_fill_startrek()`      |                   |                      |
 +----------------+------------------------------+-------------------+----------------------+
 | Futurama       | `scale_color_futurama()`     | `"planetexpress"` | `pal_futurama()`     |
 |                | `scale_fill_futurama()`      |                   |                      |
 +----------------+------------------------------+-------------------+----------------------+
 | Rick and Morty | `scale_color_rickandmorty()` | `"schwifty"`      | `pal_rickandmorty()` |
 |                | `scale_fill_rickandmorty()`  |                   |                      |
++----------------+------------------------------+-------------------+----------------------+
+| The Simpsons   | `scale_color_simpsons()`     | `"springfield"`   | `pal_simpsons()`     |
+|                | `scale_fill_simpsons()`      |                   |                      |
 +----------------+------------------------------+-------------------+----------------------+
 | GSEA           | `scale_color_gsea()`         | `"default"`       | `pal_gsea()`         |
 |                | `scale_fill_gsea()`          |                   |                      |
@@ -94,7 +106,7 @@ p1 = ggplot(subset(diamonds, carat >= 2.2),
   geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
   theme_bw()
 
-p2 = ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70), 
+p2 = ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
        aes(x = depth, fill = cut)) +
   geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
   theme_bw()
@@ -102,7 +114,8 @@ p2 = ggplot(subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
 
 ## NPG
 
-The NPG palette is inspired by the plots in journals published by Nature Publishing Group:
+The NPG palette is inspired by the plots in journals published by
+Nature Publishing Group:
 
 ```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
 p1_npg = p1 + scale_color_npg()
@@ -112,8 +125,8 @@ grid.arrange(p1_npg, p2_npg, ncol = 2)
 
 ## AAAS
 
-The AAAS palette is inspired by the plots in journals published by American Association
-for the Advancement of Science:
+The AAAS palette is inspired by the plots in journals published by
+American Association for the Advancement of Science:
 
 ```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
 p1_aaas = p1 + scale_color_aaas()
@@ -121,9 +134,21 @@ p2_aaas = p2 + scale_fill_aaas()
 grid.arrange(p1_aaas, p2_aaas, ncol = 2)
 ```
 
+## NEJM
+
+The NEJM palette is inspired by the plots in
+<emph>The New England Journal of Medicine</emph>:
+
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
+p1_nejm = p1 + scale_color_nejm()
+p2_nejm = p2 + scale_fill_nejm()
+grid.arrange(p1_nejm, p2_nejm, ncol = 2)
+```
+
 ## Lancet
 
-The Lancet palette is inspired by the plots in Lancet journals, such as <emph>Lancet Oncology</emph>:
+The Lancet palette is inspired by the plots in Lancet journals, such as
+<emph>Lancet Oncology</emph>:
 
 ```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
 p1_lancet = p1 + scale_color_lancet()
@@ -133,7 +158,8 @@ grid.arrange(p1_lancet, p2_lancet, ncol = 2)
 
 ## JCO
 
-The JCO palette is inspired by the the plots in <emph>Journal of Clinical Oncology</emph>:
+The JCO palette is inspired by the the plots in
+<emph>Journal of Clinical Oncology</emph>:
 
 ```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
 p1_jco = p1 + scale_color_jco()
@@ -161,52 +187,57 @@ The D3 palette is from the categorical colors used by
 There are four palette types (`category10`, `category20`,
 `category20b`, `category20c`) available.
 
-```{r, fig.width = 10.67, fig.height = 16, out.width = 800, out.height = 1200, dpi = 150}
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
 p1_d3 = p1 + scale_color_d3()
 p2_d3 = p2 + scale_fill_d3()
-p1_d3_c10 = p1 + scale_color_d3("category10")
-p2_d3_c10 = p2 + scale_fill_d3("category10")
-p1_d3_c20 = p1 + scale_color_d3("category20")
-p2_d3_c20 = p2 + scale_fill_d3("category20")
-p1_d3_c20b = p1 + scale_color_d3("category20b")
-p2_d3_c20b = p2 + scale_fill_d3("category20b")
-p1_d3_c20c = p1 + scale_color_d3("category20c")
-p2_d3_c20c = p2 + scale_fill_d3("category20c")
-grid.arrange(p1_d3_c10,  p2_d3_c10,
-             p1_d3_c20,  p2_d3_c20,
-             p1_d3_c20b, p2_d3_c20b,
-             p1_d3_c20c, p2_d3_c20c,
-             ncol = 2, nrow = 4)
+grid.arrange(p1_d3, p2_d3, ncol = 2)
+```
+
+## LocusZoom
+
+The LocusZoom palette is based on the colors used by
+[LocusZoom](http://locuszoom.org/).
+
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
+p1_locuszoom = p1 + scale_color_locuszoom()
+p2_locuszoom = p2 + scale_fill_locuszoom()
+grid.arrange(p1_locuszoom, p2_locuszoom, ncol = 2)
+```
+
+## IGV
+
+The IGV palette is from the colors used by
+[Integrative Genomics Viewer](http://software.broadinstitute.org/software/igv/)
+for representing chromosomes. There are two palette types
+(`default`, `alternating`) available.
+
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
+p1_igv_default = p1 + scale_color_igv()
+p2_igv_default = p2 + scale_fill_igv()
+grid.arrange(p1_igv_default, p2_igv_default, ncol = 2)
 ```
 
 ## UChicago
 
 The UChicago palette is based on
 [the colors](http://communications.uchicago.edu/identity/color-palette)
-used by The University of Chicago.
-There are three palette types (`default`, `light`, `dark`) available.
-
-```{r, fig.width = 10.67, fig.height = 12, out.width = 800, out.height = 900, dpi = 150}
-p1_uchicago = p1 + scale_color_uchicago()
-p2_uchicago = p2 + scale_fill_uchicago()
-p1_uchicago_light = p1 + scale_color_uchicago("light")
-p2_uchicago_light = p2 + scale_fill_uchicago("light")
-p1_uchicago_dark  = p1 + scale_color_uchicago("dark")
-p2_uchicago_dark  = p2 + scale_fill_uchicago("dark")
-grid.arrange(p1_uchicago,       p2_uchicago,
-             p1_uchicago_light, p2_uchicago_light,
-             p1_uchicago_dark,  p2_uchicago_dark,
-             ncol = 2, nrow = 3)
-```
-
-## The Simpsons
-
-This palette is inspired by the colors used in the TV show <emph>The Simpsons</emph>:
+used by The University of Chicago. There are three palette types
+(`default`, `light`, `dark`) available.
 
 ```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
-p1_simpsons = p1 + scale_color_simpsons()
-p2_simpsons = p2 + scale_fill_simpsons()
-grid.arrange(p1_simpsons, p2_simpsons, ncol = 2)
+p1_uchicago = p1 + scale_color_uchicago()
+p2_uchicago = p2 + scale_fill_uchicago()
+grid.arrange(p1_uchicago, p2_uchicago, ncol = 2)
+```
+
+## Star Trek
+
+This palette is inspired by the (uniform) colors in <emph>Star Trek</emph>:
+
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
+p1_startrek = p1 + scale_color_startrek()
+p2_startrek = p2 + scale_fill_startrek()
+grid.arrange(p1_startrek, p2_startrek, ncol = 2)
 ```
 
 ## Futurama
@@ -229,6 +260,17 @@ p2_rickandmorty = p2 + scale_fill_rickandmorty()
 grid.arrange(p1_rickandmorty, p2_rickandmorty, ncol = 2)
 ```
 
+## The Simpsons
+
+This palette is inspired by the colors used in the TV show
+<emph>The Simpsons</emph>:
+
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
+p1_simpsons = p1 + scale_color_simpsons()
+p2_simpsons = p2 + scale_fill_simpsons()
+grid.arrange(p1_simpsons, p2_simpsons, ncol = 2)
+```
+
 # Continuous Color Palettes
 
 We will use a correlation matrix visualization (a special type of heatmap)
@@ -238,11 +280,11 @@ to demonstrate the continuous color palettes in `ggsci`.
 library("reshape2")
 
 data("mtcars")
-cor = cor(mtcars)
+cor = cor(unname(cbind(mtcars, mtcars, mtcars, mtcars)))
 cor_melt = melt(cor)
 
 p3 = ggplot(cor_melt,
-            aes(x = Var1, y = Var2, fill = value)) + 
+            aes(x = Var1, y = Var2, fill = value)) +
   geom_tile(colour = "black", size = 0.3) +
   theme_bw()
 ```
@@ -250,7 +292,7 @@ p3 = ggplot(cor_melt,
 ## GSEA
 
 The GSEA palette (continuous) is inspired by the heatmaps generated by
-[GSEA GenePattern](http://software.broadinstitute.org/cancer/software/genepattern/).
+[GSEA GenePattern](https://software.broadinstitute.org/cancer/software/genepattern/).
 
 ```{r, fig.width = 8, fig.height = 6.67, out.width = 600, out.height = 500, dpi = 150}
 p3_gsea = p3 + scale_fill_gsea()
@@ -289,4 +331,4 @@ The authors are not responsible for the usage of such palettes.
 
 <hr>
 
-Project website: [ggsci.net](http://ggsci.net)
+Project website: [ggsci.net](https://ggsci.net)

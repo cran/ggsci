@@ -1,24 +1,38 @@
-# CHANGES IN ggsci VERSION 1.0 (2016-04-01)
+# ggsci 2.4 (2017-03-07)
 
-## NEW FEATURES
+## New Features
 
- * First version
- * 8 discrete color palettes:
-   * NPG
-   * AAAS
-   * Lancet
-   * JCO
-   * UCSCGB
-   * UChicago
-   * Simpsons
-   * Rick and Morty
+Four new discrete color palettes:
 
-# CHANGES IN ggsci VERSION 2.0 (2016-11-20)
+- NEJM
+- LocusZoom
+- IGV
+- Star Trek
 
-## NEW FEATURES
+# ggsci 2.0 (2016-11-20)
 
- * Two new discrete color palettes:
-   * D3 color palette
-   * Futurama color palette
- * The first continuous color palette:
-   * GSEA GenePattern color palette
+## New Features
+
+Two new discrete color palettes:
+
+- D3.js (v3)
+- Futurama (Planet Express)
+
+The first continuous color palette:
+
+- GSEA GenePattern
+
+# ggsci 1.0 (2016-04-01)
+
+## New Features
+
+Eight discrete color palettes:
+
+  - NPG
+  - AAAS
+  - Lancet
+  - JCO
+  - UCSCGB
+  - UChicago
+  - The Simpsons (Springfield)
+  - Rick and Morty (Schwifty)
