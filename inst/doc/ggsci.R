@@ -37,6 +37,11 @@ p2_lancet = p2 + scale_fill_lancet()
 grid.arrange(p1_lancet, p2_lancet, ncol = 2)
 
 ## ---- fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150----
+p1_jama = p1 + scale_color_jama()
+p2_jama = p2 + scale_fill_jama()
+grid.arrange(p1_jama, p2_jama, ncol = 2)
+
+## ---- fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150----
 p1_jco = p1 + scale_color_jco()
 p2_jco = p2 + scale_fill_jco()
 grid.arrange(p1_jco, p2_jco, ncol = 2)
@@ -72,6 +77,16 @@ p2_startrek = p2 + scale_fill_startrek()
 grid.arrange(p1_startrek, p2_startrek, ncol = 2)
 
 ## ---- fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150----
+p1_tron = p1 + theme_dark() + theme(
+    panel.background = element_rect(fill = "#2D2D2D"),
+    legend.key = element_rect(fill = "#2D2D2D")) +
+  scale_color_tron()
+p2_tron = p2 + theme_dark() + theme(
+    panel.background = element_rect(fill = "#2D2D2D")) +
+  scale_fill_tron()
+grid.arrange(p1_tron, p2_tron, ncol = 2)
+
+## ---- fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150----
 p1_futurama = p1 + scale_color_futurama()
 p2_futurama = p2 + scale_fill_futurama()
 grid.arrange(p1_futurama, p2_futurama, ncol = 2)
@@ -96,11 +111,49 @@ cor_melt = melt(cor)
 p3 = ggplot(cor_melt,
             aes(x = Var1, y = Var2, fill = value)) +
   geom_tile(colour = "black", size = 0.3) +
-  theme_bw()
+  theme_bw() +
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank())
 
-## ---- fig.width = 8, fig.height = 6.67, out.width = 600, out.height = 500, dpi = 150----
-p3_gsea = p3 + scale_fill_gsea()
-p3_gsea
+## ---- fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150----
+p3_gsea     = p3 + scale_fill_gsea()
+p3_gsea_inv = p3 + scale_fill_gsea(reverse = TRUE)
+grid.arrange(p3_gsea, p3_gsea_inv, ncol = 2)
+
+## ------------------------------------------------------------------------
+library("reshape2")
+
+set.seed(42)
+k = 9
+x = diag(k)
+x[upper.tri(x)] = runif(sum(1:(k - 1)), 0, 1)
+x_melt = melt(x)
+
+p4 = ggplot(x_melt, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile(colour = "black", size = 0.3) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  theme_bw() + theme(
+    legend.position = "none", plot.background = element_blank(),
+    axis.line = element_blank(), axis.ticks = element_blank(),
+    axis.text.x = element_blank(), axis.text.y = element_blank(),
+    axis.title.x = element_blank(), axis.title.y = element_blank(),
+    panel.background = element_blank(), panel.border = element_blank(),
+    panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+## ---- fig.width = 10.67, fig.height = 7.12, out.width = 800, out.height = 533, dpi = 150----
+grid.arrange(
+  p4 + scale_fill_material("red"),         p4 + scale_fill_material("pink"),
+  p4 + scale_fill_material("purple"),      p4 + scale_fill_material("deep-purple"),
+  p4 + scale_fill_material("indigo"),      p4 + scale_fill_material("blue"),
+  p4 + scale_fill_material("light-blue"),  p4 + scale_fill_material("cyan"),
+  p4 + scale_fill_material("teal"),        p4 + scale_fill_material("green"),
+  p4 + scale_fill_material("light-green"), p4 + scale_fill_material("lime"),
+  p4 + scale_fill_material("yellow"),      p4 + scale_fill_material("amber"),
+  p4 + scale_fill_material("orange"),      p4 + scale_fill_material("deep-orange"),
+  p4 + scale_fill_material("brown"),       p4 + scale_fill_material("grey"),
+  p4 + scale_fill_material("blue-grey"),
+  ncol = 6)
 
 ## ---- fig.width = 6.67, fig.height = 6.67, out.width = 500, out.height = 500, dpi = 150----
 mypal = pal_npg("nrc", alpha = 0.7)(9)

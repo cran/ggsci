@@ -2,8 +2,10 @@ Package: ggsci
 Type: Package
 Title: Scientific Journal and Sci-Fi Themed Color Palettes for
         'ggplot2'
-Version: 2.4
-Author: Nan Xiao <me@nanx.me>, Miaozhu Li <miaozhu.li@duke.edu>
+Version: 2.7
+Authors@R: c(
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre")),
+    person("Miaozhu", "Li", email = "miaozhu.li@duke.edu", role = "ctb"))
 Maintainer: Nan Xiao <me@nanx.me>
 Description: A collection of 'ggplot2' color palettes inspired by
     plots in scientific journals, data visualization libraries,
@@ -18,6 +20,8 @@ Imports: grDevices, scales, ggplot2 (>= 2.0.0)
 Suggests: knitr, rmarkdown, gridExtra, reshape2
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2017-03-08 01:09:57 UTC; jimmy
+Packaged: 2017-06-12 15:32:59 UTC; nanx
+Author: Nan Xiao [aut, cre],
+  Miaozhu Li [ctb]
 Repository: CRAN
-Date/Publication: 2017-03-08 08:22:21
+Date/Publication: 2017-06-12 17:37:55 UTC
