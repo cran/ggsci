@@ -1,7 +1,9 @@
 # TODO
 
 - ESL (Fig. 4.7, 7.3, 6.6, 10.4, 4.13, 4.11, 12.10)
-- PGF color palette "exotic": http://mirrors.ctan.org/graphics/pgf/contrib/pgfplots/doc/pgfplots.pdf (p. 211)
-- Rick and Morty: Plumbus
+- Marvel's The Defenders (colors from opening titles). Red - Daredevil; Blue - Jessica Jones; Orange - Luke Cage; Green - Iron Fist.
+- Gephi: https://github.com/gephi/gephi/blob/master/modules/Utils/src/main/java/org/gephi/utils/PaletteUtils.java#L83-L110
+- Apple Human Interface Guidelines: https://developer.apple.com/ios/human-interface-guidelines/visual-design/color/ one discrete, one continuous.
 
 - Add a function for displaying all color palettes
+- Color palette extraction: http://colormind.io/

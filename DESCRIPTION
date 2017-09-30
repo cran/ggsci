@@ -2,7 +2,7 @@ Package: ggsci
 Type: Package
 Title: Scientific Journal and Sci-Fi Themed Color Palettes for
         'ggplot2'
-Version: 2.7
+Version: 2.8
 Authors@R: c(
     person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre")),
     person("Miaozhu", "Li", email = "miaozhu.li@duke.edu", role = "ctb"))
@@ -18,10 +18,11 @@ BugReports: https://github.com/road2stat/ggsci/issues
 Depends: R (>= 3.0.2)
 Imports: grDevices, scales, ggplot2 (>= 2.0.0)
 Suggests: knitr, rmarkdown, gridExtra, reshape2
-RoxygenNote: 5.0.1
+Encoding: UTF-8
+RoxygenNote: 6.0.1.9000
 NeedsCompilation: no
-Packaged: 2017-06-12 15:32:59 UTC; nanx
+Packaged: 2017-09-30 04:53:01 UTC; nanx
 Author: Nan Xiao [aut, cre],
   Miaozhu Li [ctb]
 Repository: CRAN
-Date/Publication: 2017-06-12 17:37:55 UTC
+Date/Publication: 2017-09-30 14:14:35 UTC
