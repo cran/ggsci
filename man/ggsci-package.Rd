@@ -2,19 +2,32 @@
 % Please edit documentation in R/ggsci-package.R
 \docType{package}
 \name{ggsci-package}
+\alias{ggsci}
 \alias{ggsci-package}
-\title{Scientific Journal and Sci-Fi Themed Color Palettes for 'ggplot2'}
+\title{ggsci: Scientific Journal and Sci-Fi Themed Color Palettes for 'ggplot2'}
 \description{
-Scientific Journal and Sci-Fi Themed Color Palettes for 'ggplot2'
-}
-\details{
-Opened the vignette via \code{vignette("ggsci")}.
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-\tabular{ll}{ Package: \tab ggsci\cr
-Type: \tab Package\cr
-License: \tab GPL-3\cr }
+A collection of 'ggplot2' color palettes inspired by plots in scientific journals, data visualization libraries, science fiction movies, and TV shows.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://nanx.me/ggsci/}
+  \item \url{https://github.com/nanxstats/ggsci}
+  \item Report bugs at \url{https://github.com/nanxstats/ggsci/issues}
+}
+
 }
 \author{
-Nan Xiao <\email{me@nanx.me}>
-        Miaozhu Li <\email{miaozhu.li@duke.edu}>
+\strong{Maintainer}: Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID})
+
+Other contributors:
+\itemize{
+  \item Joshua Cook \email{joshuacook0023@gmail.com} [contributor]
+  \item Clara Jégousse \email{cat3@hi.is} [contributor]
+  \item Miaozhu Li \email{miaozhu.li@duke.edu} [contributor]
 }
+
+}
+\keyword{internal}

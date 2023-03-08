@@ -6,20 +6,32 @@
 \alias{scale_fill_material}
 \title{Material Design Color Palettes}
 \usage{
-scale_color_material(palette = c("red", "pink", "purple", "deep-purple",
-  "indigo", "blue", "light-blue", "cyan", "teal", "green", "light-green",
-  "lime", "yellow", "amber", "orange", "deep-orange", "brown", "grey",
-  "blue-grey"), alpha = 1, reverse = FALSE, ...)
+scale_color_material(
+  palette = c("red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue",
+    "cyan", "teal", "green", "light-green", "lime", "yellow", "amber", "orange",
+    "deep-orange", "brown", "grey", "blue-grey"),
+  alpha = 1,
+  reverse = FALSE,
+  ...
+)
 
-scale_colour_material(palette = c("red", "pink", "purple", "deep-purple",
-  "indigo", "blue", "light-blue", "cyan", "teal", "green", "light-green",
-  "lime", "yellow", "amber", "orange", "deep-orange", "brown", "grey",
-  "blue-grey"), alpha = 1, reverse = FALSE, ...)
+scale_colour_material(
+  palette = c("red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue",
+    "cyan", "teal", "green", "light-green", "lime", "yellow", "amber", "orange",
+    "deep-orange", "brown", "grey", "blue-grey"),
+  alpha = 1,
+  reverse = FALSE,
+  ...
+)
 
-scale_fill_material(palette = c("red", "pink", "purple", "deep-purple",
-  "indigo", "blue", "light-blue", "cyan", "teal", "green", "light-green",
-  "lime", "yellow", "amber", "orange", "deep-orange", "brown", "grey",
-  "blue-grey"), alpha = 1, reverse = FALSE, ...)
+scale_fill_material(
+  palette = c("red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue",
+    "cyan", "teal", "green", "light-green", "lime", "yellow", "amber", "orange",
+    "deep-orange", "brown", "grey", "blue-grey"),
+  alpha = 1,
+  reverse = FALSE,
+  ...
+)
 }
 \arguments{
 \item{palette}{Palette type.
@@ -44,8 +56,8 @@ There are 19 available options:
 \item \code{"brown"}
 \item \code{"grey"}
 \item \code{"blue-grey"}}
-See the \href{https://material.io/guidelines/style/color.html}{material
-design color guidelines} for details.}
+See \href{https://m2.material.io/design/color/the-color-system.html}{Material Design color system}
+for details.}
 
 \item{alpha}{Transparency level, a real number in (0, 1].
 See \code{alpha} in \code{\link[grDevices]{rgb}} for details.}
@@ -62,11 +74,13 @@ library("ggplot2")
 library("reshape2")
 data("mtcars")
 
-cor = abs(cor(mtcars))
-cor_melt = melt(cor)
+cor <- abs(cor(mtcars))
+cor_melt <- melt(cor)
 
-ggplot(cor_melt,
-       aes(x = Var1, y = Var2, fill = value)) +
+ggplot(
+  cor_melt,
+  aes(x = Var1, y = Var2, fill = value)
+) +
   geom_tile(colour = "black", size = 0.3) +
   theme_bw() + scale_fill_material("blue-grey")
 }
