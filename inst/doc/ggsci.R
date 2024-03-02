@@ -1,4 +1,4 @@
-## ---- include=FALSE-----------------------------------------------------------
+## ----include=FALSE------------------------------------------------------------
 knitr::knit_hooks$set(pngquant = knitr::hook_pngquant)
 
 knitr::opts_chunk$set(
@@ -167,7 +167,7 @@ p3 <- ggplot(
     axis.title.y = element_blank()
   )
 
-## ---- fig.height=4------------------------------------------------------------
+## ----fig.height=4-------------------------------------------------------------
 p3_gsea <- p3 + scale_fill_gsea()
 p3_gsea_inv <- p3 + scale_fill_gsea(reverse = TRUE)
 grid.arrange(p3_gsea, p3_gsea_inv, ncol = 2)
@@ -195,7 +195,7 @@ p4 <- ggplot(x_melt, aes(x = Var1, y = Var2, fill = value)) +
     panel.grid.major = element_blank(), panel.grid.minor = element_blank()
   )
 
-## ---- fig.height=7.12---------------------------------------------------------
+## ----fig.height=7.12----------------------------------------------------------
 grid.arrange(
   p4 + scale_fill_material("red"), p4 + scale_fill_material("pink"),
   p4 + scale_fill_material("purple"), p4 + scale_fill_material("deep-purple"),
@@ -210,7 +210,7 @@ grid.arrange(
   ncol = 6
 )
 
-## ---- fig.width=6.67, fig.height=6.67, out.width="60%"------------------------
+## ----fig.width=6.67, fig.height=6.67, out.width="60%"-------------------------
 mypal <- pal_npg("nrc", alpha = 0.7)(9)
 mypal
 
