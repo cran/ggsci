@@ -63,6 +63,11 @@ p2_jama <- p2 + scale_fill_jama()
 grid.arrange(p1_jama, p2_jama, ncol = 2)
 
 ## -----------------------------------------------------------------------------
+p1_bmj <- p1 + scale_color_bmj()
+p2_bmj <- p2 + scale_fill_bmj()
+grid.arrange(p1_bmj, p2_bmj, ncol = 2)
+
+## -----------------------------------------------------------------------------
 p1_jco <- p1 + scale_color_jco()
 p2_jco <- p2 + scale_fill_jco()
 grid.arrange(p1_jco, p2_jco, ncol = 2)
