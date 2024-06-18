@@ -83,6 +83,11 @@ p2_d3 <- p2 + scale_fill_d3()
 grid.arrange(p1_d3, p2_d3, ncol = 2)
 
 ## -----------------------------------------------------------------------------
+p1_observable <- p1 + scale_color_observable()
+p2_observable <- p2 + scale_fill_observable()
+grid.arrange(p1_observable, p2_observable, ncol = 2)
+
+## -----------------------------------------------------------------------------
 p1_locuszoom <- p1 + scale_color_locuszoom()
 p2_locuszoom <- p2 + scale_fill_locuszoom()
 grid.arrange(p1_locuszoom, p2_locuszoom, ncol = 2)
@@ -155,16 +160,15 @@ p2_frontiers <- p2 + scale_fill_frontiers()
 grid.arrange(p1_frontiers, p2_frontiers, ncol = 2)
 
 ## -----------------------------------------------------------------------------
-library("reshape2")
-
 data("mtcars")
-cor <- cor(unname(cbind(mtcars, mtcars, mtcars, mtcars)))
-cor_melt <- melt(cor)
+cor <- cor(unname(mtcars))
+cor_melt <- data.frame(
+  Var1 = rep(seq_len(nrow(cor)), times = ncol(cor)),
+  Var2 = rep(seq_len(ncol(cor)), each = nrow(cor)),
+  value = as.vector(cor)
+)
 
-p3 <- ggplot(
-  cor_melt,
-  aes(x = Var1, y = Var2, fill = value)
-) +
+p3 <- ggplot(cor_melt, aes(x = Var1, y = Var2, fill = value)) +
   geom_tile(colour = "black", linewidth = 0.3) +
   theme_void() +
   theme(
@@ -172,19 +176,16 @@ p3 <- ggplot(
     axis.title.y = element_blank()
   )
 
-## ----fig.height=4-------------------------------------------------------------
-p3_gsea <- p3 + scale_fill_gsea()
-p3_gsea_inv <- p3 + scale_fill_gsea(reverse = TRUE)
-grid.arrange(p3_gsea, p3_gsea_inv, ncol = 2)
-
 ## -----------------------------------------------------------------------------
-library("reshape2")
-
 set.seed(42)
-k <- 9
+k <- 6
 x <- diag(k)
 x[upper.tri(x)] <- runif(sum(1:(k - 1)), 0, 1)
-x_melt <- melt(x)
+x_melt <- data.frame(
+  Var1 = rep(seq_len(nrow(x)), times = ncol(x)),
+  Var2 = rep(seq_len(ncol(x)), each = nrow(x)),
+  value = as.vector(x)
+)
 
 p4 <- ggplot(x_melt, aes(x = Var1, y = Var2, fill = value)) +
   geom_tile(colour = "black", linewidth = 0.3) +
@@ -200,7 +201,23 @@ p4 <- ggplot(x_melt, aes(x = Var1, y = Var2, fill = value)) +
     panel.grid.major = element_blank(), panel.grid.minor = element_blank()
   )
 
-## ----fig.height=7.12----------------------------------------------------------
+## ----fig.height=4-------------------------------------------------------------
+p3_gsea <- p3 + scale_fill_gsea()
+p3_gsea_inv <- p3 + scale_fill_gsea(reverse = TRUE)
+grid.arrange(p3_gsea, p3_gsea_inv, ncol = 2)
+
+## ----fig.height=2.6-----------------------------------------------------------
+grid.arrange(
+  p4 + scale_fill_bs5("blue"), p4 + scale_fill_bs5("indigo"),
+  p4 + scale_fill_bs5("purple"), p4 + scale_fill_bs5("pink"),
+  p4 + scale_fill_bs5("red"), p4 + scale_fill_bs5("orange"),
+  p4 + scale_fill_bs5("yellow"), p4 + scale_fill_bs5("green"),
+  p4 + scale_fill_bs5("teal"), p4 + scale_fill_bs5("cyan"),
+  p4 + scale_fill_bs5("gray"),
+  ncol = 8
+)
+
+## ----fig.height=3.8-----------------------------------------------------------
 grid.arrange(
   p4 + scale_fill_material("red"), p4 + scale_fill_material("pink"),
   p4 + scale_fill_material("purple"), p4 + scale_fill_material("deep-purple"),
@@ -212,13 +229,28 @@ grid.arrange(
   p4 + scale_fill_material("orange"), p4 + scale_fill_material("deep-orange"),
   p4 + scale_fill_material("brown"), p4 + scale_fill_material("grey"),
   p4 + scale_fill_material("blue-grey"),
-  ncol = 6
+  ncol = 8
+)
+
+## ----fig.height=3.8-----------------------------------------------------------
+grid.arrange(
+  p4 + scale_fill_tw3("slate"), p4 + scale_fill_tw3("gray"),
+  p4 + scale_fill_tw3("zinc"), p4 + scale_fill_tw3("neutral"),
+  p4 + scale_fill_tw3("stone"), p4 + scale_fill_tw3("red"),
+  p4 + scale_fill_tw3("orange"), p4 + scale_fill_tw3("amber"),
+  p4 + scale_fill_tw3("yellow"), p4 + scale_fill_tw3("lime"),
+  p4 + scale_fill_tw3("green"), p4 + scale_fill_tw3("emerald"),
+  p4 + scale_fill_tw3("teal"), p4 + scale_fill_tw3("cyan"),
+  p4 + scale_fill_tw3("sky"), p4 + scale_fill_tw3("blue"),
+  p4 + scale_fill_tw3("indigo"), p4 + scale_fill_tw3("violet"),
+  p4 + scale_fill_tw3("purple"), p4 + scale_fill_tw3("fuchsia"),
+  p4 + scale_fill_tw3("pink"), p4 + scale_fill_tw3("rose"),
+  ncol = 8
 )
 
 ## ----fig.width=6.67, fig.height=6.67, out.width="60%"-------------------------
 mypal <- pal_npg("nrc", alpha = 0.7)(9)
 mypal
 
-library("scales")
-show_col(mypal)
+scales::show_col(mypal)
 

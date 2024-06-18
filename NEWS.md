@@ -1,3 +1,23 @@
+# ggsci 3.2.0
+
+## New features
+
+- Add the Observable 10 palette in `scale_color_observable()`
+  and `scale_fill_observable()` (#41).
+- Add Bootstrap 5 color palettes (continuous) in `scale_color_bs5()`
+  and `scale_fill_bs5()` (#18).
+- Add Tailwind CSS color palettes (continuous) in `scale_color_tw3()`
+  and `scale_fill_tw3()` (#19).
+
+## Improvements
+
+- Move internal color palette data from `R/sysdata.rda` to `R/palettes.R`.
+  This change enhances package development transparency, reduces unnecessary
+  indirection, and simplifies contributions by avoiding the construction
+  of the palette data using the R script in `data-raw/` (#42).
+- For continuous palette examples, remove the reshape2 dependency and
+  use more compact grid layout to reduce output image size (#45).
+
 # ggsci 3.1.0
 
 ## New features

@@ -4,7 +4,7 @@
 \alias{scale_color_material}
 \alias{scale_colour_material}
 \alias{scale_fill_material}
-\title{Material Design color palettes}
+\title{Material Design color scales}
 \usage{
 scale_color_material(
   palette = c("red", "pink", "purple", "deep-purple", "indigo", "blue", "light-blue",
@@ -50,14 +50,12 @@ scale_fill_material(
 \item \code{"lime"}
 \item \code{"yellow"}
 \item \code{"amber"}
-\item \code{"orange"},
+\item \code{"orange"}
 \item \code{"deep-orange"}
 \item \code{"brown"}
 \item \code{"grey"}
 \item \code{"blue-grey"}
-}
-
-For details, see \href{https://m2.material.io/design/color/the-color-system.html}{Material Design color system}.}
+}}
 
 \item{alpha}{Transparency level, a real number in (0, 1].
 See \code{alpha} in \code{\link[grDevices:rgb]{grDevices::rgb()}} for details.}
@@ -71,11 +69,14 @@ See \code{\link[=pal_material]{pal_material()}} for details.
 }
 \examples{
 library("ggplot2")
-library("reshape2")
-data("mtcars")
 
+data("mtcars")
 cor <- abs(cor(mtcars))
-cor_melt <- melt(cor)
+cor_melt <- data.frame(
+  Var1 = rep(seq_len(nrow(cor)), times = ncol(cor)),
+  Var2 = rep(seq_len(ncol(cor)), each = nrow(cor)),
+  value = as.vector(cor)
+)
 
 ggplot(
   cor_melt,

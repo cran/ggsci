@@ -1,6 +1,6 @@
 #' Material Design color palettes
 #'
-#' The Material Design 2 color palettes.
+#' Material Design 2 color palettes.
 #'
 #' @param palette Palette type. There are 19 available options:
 #'   - `"red"`
@@ -17,15 +17,11 @@
 #'   - `"lime"`
 #'   - `"yellow"`
 #'   - `"amber"`
-#'   - `"orange"`,
+#'   - `"orange"`
 #'   - `"deep-orange"`
 #'   - `"brown"`
 #'   - `"grey"`
 #'   - `"blue-grey"`
-#'
-#'   For details, see [Material Design color
-#'   system](https://m2.material.io/design/color/the-color-system.html).
-#'
 #' @param n Number of individual colors to be generated.
 #' @param alpha Transparency level, a real number in (0, 1].
 #'   See `alpha` in [grDevices::rgb()] for details.
@@ -70,7 +66,7 @@ rgb_material <- function(
 
 #' Material Design color palettes
 #'
-#' The Material Design 2 color palettes.
+#' Material Design 2 color palettes.
 #'
 #' @inheritParams rgb_material
 #'
@@ -96,7 +92,7 @@ pal_material <- function(
   manual_pal(unname(alpha_cols))
 }
 
-#' Material Design color palettes
+#' Material Design color scales
 #'
 #' See [pal_material()] for details.
 #'
@@ -113,11 +109,14 @@ pal_material <- function(
 #'
 #' @examples
 #' library("ggplot2")
-#' library("reshape2")
-#' data("mtcars")
 #'
+#' data("mtcars")
 #' cor <- abs(cor(mtcars))
-#' cor_melt <- melt(cor)
+#' cor_melt <- data.frame(
+#'   Var1 = rep(seq_len(nrow(cor)), times = ncol(cor)),
+#'   Var2 = rep(seq_len(ncol(cor)), each = nrow(cor)),
+#'   value = as.vector(cor)
+#' )
 #'
 #' ggplot(
 #'   cor_melt,
