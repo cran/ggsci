@@ -15,27 +15,14 @@ knitr::opts_chunk$set(
   pngquant = "--speed=1 --quality=50"
 )
 
-## -----------------------------------------------------------------------------
+## ----message=FALSE, warning=FALSE---------------------------------------------
 library("ggsci")
 library("ggplot2")
 library("gridExtra")
 
-data("diamonds")
-
-p1 <- ggplot(
-  subset(diamonds, carat >= 2.2),
-  aes(x = table, y = price, colour = cut)
-) +
-  geom_point(alpha = 0.7) +
-  geom_smooth(method = "loess", alpha = 0.05, linewidth = 1, span = 1) +
-  theme_bw()
-
-p2 <- ggplot(
-  subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
-  aes(x = depth, fill = cut)
-) +
-  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
-  theme_bw()
+## -----------------------------------------------------------------------------
+p1 <- example_scatterplot()
+p2 <- example_barplot()
 
 ## -----------------------------------------------------------------------------
 p1_npg <- p1 + scale_color_npg()
@@ -86,6 +73,21 @@ grid.arrange(p1_d3, p2_d3, ncol = 2)
 p1_observable <- p1 + scale_color_observable()
 p2_observable <- p2 + scale_fill_observable()
 grid.arrange(p1_observable, p2_observable, ncol = 2)
+
+## -----------------------------------------------------------------------------
+p1_primer <- p1 + scale_color_primer()
+p2_primer <- p2 + scale_fill_primer()
+grid.arrange(p1_primer, p2_primer, ncol = 2)
+
+## -----------------------------------------------------------------------------
+p1_atlassian <- p1 + scale_color_atlassian()
+p2_atlassian <- p2 + scale_fill_atlassian()
+grid.arrange(p1_atlassian, p2_atlassian, ncol = 2)
+
+## -----------------------------------------------------------------------------
+p1_iterm <- p1 + scale_color_iterm("Rose Pine")
+p2_iterm <- p2 + scale_fill_iterm("Rose Pine")
+grid.arrange(p1_iterm, p2_iterm, ncol = 2)
 
 ## -----------------------------------------------------------------------------
 p1_locuszoom <- p1 + scale_color_locuszoom()

@@ -1,3 +1,27 @@
+# ggsci 4.0.0
+
+## New features
+
+- Add the Primer design system (from GitHub) palette in `scale_color_primer()`
+  and `scale_fill_primer()` (#62, #63).
+- Add the Atlassian Design System palette in `scale_color_atlassian()`
+  and `scale_fill_atlassian()` (#64).
+- Add 400+ iTerm palettes in `scale_color_iterm()` and `scale_fill_iterm()` (#67).
+
+## Improvements
+
+- Add `example_scatterplot()` and `example_barplot()` to simplify
+  discrete scale examples in documentation. This reduces boilerplate code
+  and makes it easier to maintain the examples.
+  Also improves graphical appearance of the examples by using a minimalist
+  theme with alternative data subsets (#61).
+
+## Maintenance
+
+- Refactor the logo generation script from an R script to a shell script
+  and move it into `tools/` (#66).
+- Use standard static imports workflow (#58).
+
 # ggsci 3.2.0
 
 ## New features
@@ -54,7 +78,7 @@
   [customizing color selection and ordering in a palette](https://nanx.me/ggsci/articles/ggsci-faq.html#customize-color-ordering-in-a-palette)
   with self-defined color scale functions (#23).
 - Fix "lost braces" check notes on r-devel by using Unicode characters
-  ([a91faf1](https://github.com/nanxstats/ggsci/commit/a91faf183ae44fe43355283c173a1e2de70de6d2)).
+  (nanxstats/ggsci@a91faf1).
 
 # ggsci 3.0.0
 
