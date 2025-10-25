@@ -1,6 +1,6 @@
-c916a1330a242c1b7d8f77ca2f895464 *DESCRIPTION
+00cf5cba6a3f93e78c9991d37f7d7412 *DESCRIPTION
 9fdd2931b4a916112523863038025a1c *NAMESPACE
-612ce946d149fbe835ab5adf1a12a5cf *NEWS.md
+04d72e5f0ead9ad5435b0eed15e66655 *NEWS.md
 599dbb5834e70ffaa183a93e435d6fe5 *R/continuous-bs5.R
 c70e63c44fdfb91fc439bfa1fc15897c *R/continuous-gsea.R
 695cce33a67e622e232d7a70f3d4c662 *R/continuous-material.R
@@ -14,7 +14,7 @@ fde2964065f08922b399b3d44b4e7cd3 *R/discrete-d3.R
 6555576ba106caef507abae1013a875f *R/discrete-frontiers.R
 b311d2c8b558b1eb22aaebb51d2d1c1d *R/discrete-futurama.R
 61aa05a927b88928abbbb4e17df4f9a5 *R/discrete-igv.R
-ce3c5eaf89350f8d26b08d5d4eb3b7f2 *R/discrete-iterm.R
+d96331b43d2223ac000d86f01c04c4fd *R/discrete-iterm.R
 2341929d910403a66ae56792ed5d48b0 *R/discrete-jama.R
 356e04c2fcdd2173e68f477a35fdaca1 *R/discrete-jco.R
 2a66e0249fae233069454272eada422f *R/discrete-lancet.R
@@ -31,7 +31,7 @@ ce3c5eaf89350f8d26b08d5d4eb3b7f2 *R/discrete-iterm.R
 3f6afb3bfcc5bf1ff1e572b54f9a16c6 *R/discrete-ucscgb.R
 469d73b009e7b2fef144ad4a5460ae0d *R/examples.R
 b4fe12876c37f8a22cde06e9701eecf0 *R/ggsci-package.R
-77141fd4baa139a62b07bc6a88e660c8 *R/palettes-iterm.R
+7452413a3951ed31248576a2fac2dded *R/palettes-iterm.R
 0707074de25e0080b2d2fc0df449530a *R/palettes.R
 72c235a8035d12dd58333980efbb02cd *R/staticimports.R
 1a01c625981e207319b392a973bdfd46 *R/utils.R
@@ -42,8 +42,8 @@ b4fe12876c37f8a22cde06e9701eecf0 *R/ggsci-package.R
 99b408fbb27671330d03a8f101b37e59 *inst/doc/ggsci-faq.Rmd
 79818b46e5c6589f7e919ca808595a95 *inst/doc/ggsci-faq.html
 77228b9f310c33a944f9df0eda4a9e4a *inst/doc/ggsci.R
-39826d099e496008c3e82e0657e80c1b *inst/doc/ggsci.Rmd
-3ea799e89d0a8fbf39e3c491ededa58f *inst/doc/ggsci.html
+a51178906b74519d25f892ebbe27b8a1 *inst/doc/ggsci.Rmd
+a6257969be76ff0b3325a568a270d19a *inst/doc/ggsci.html
 7a46953940f87ede1b6f5c95da60480e *man/example_plots.Rd
 a7952b31a93c8f07f3d33e2e7176da7b *man/figures/README-ggsci-aaas-1.png
 34754422d1c0cb7d23728bc47d6eb190 *man/figures/README-ggsci-atlassian-1.png
@@ -89,7 +89,7 @@ ea10b8afcca2c7f26c9a78200cb0ec15 *man/pal_aaas.Rd
 d5e1711e415283917cc275eee1bddde9 *man/pal_futurama.Rd
 e862620e38f30b1a60ca350bbe1a09c6 *man/pal_gsea.Rd
 1317d07dd2217086951e1771c3c5909a *man/pal_igv.Rd
-95de26ae9cb1a99225f55fe48ec84c0f *man/pal_iterm.Rd
+67ccfd24199b24167dba8115966c22f2 *man/pal_iterm.Rd
 53a0d957997ea2de67b81e7ba41fc22e *man/pal_jama.Rd
 8ad59dd0507ce03131bdf113157e9bfc *man/pal_jco.Rd
 7926ee1fa14cd512566ad63805fa652c *man/pal_lancet.Rd
@@ -121,7 +121,7 @@ c7bdd836311b7c2ed716023246ec3a4e *man/scale_flatui.Rd
 890abc73ed3d330ac0e508ac4ee2cca0 *man/scale_futurama.Rd
 94bcf651ad5d23fec16c2e994b21c091 *man/scale_gsea.Rd
 cec8140a6a90a541c6e59c68fd896db9 *man/scale_igv.Rd
-451b7e185d6d3814ee52a55354dbcc88 *man/scale_iterm.Rd
+a8860cba0505dee30976855bf98e2a77 *man/scale_iterm.Rd
 034f776b4e4332a2b389d88589fa14e1 *man/scale_jama.Rd
 c8ef354ed07885267c85ce86477a598d *man/scale_jco.Rd
 f76e611db9f92608592376ffa84f61eb *man/scale_lancet.Rd
@@ -140,4 +140,4 @@ b7c00938dda4402928557a9faa21cb96 *man/scale_tron.Rd
 e92cf20bca865c7a2cde4baa74f212d0 *man/scale_ucscgb.Rd
 4eacfa48d71283d7a0f553326f306624 *vignettes/custom.css
 99b408fbb27671330d03a8f101b37e59 *vignettes/ggsci-faq.Rmd
-39826d099e496008c3e82e0657e80c1b *vignettes/ggsci.Rmd
+a51178906b74519d25f892ebbe27b8a1 *vignettes/ggsci.Rmd
